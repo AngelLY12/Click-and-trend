@@ -1,0 +1,172 @@
+<section class="relative">
+  <div class="w-full max-w-7xl mx-auto px-4 md:px-8">
+      <div class="grid">
+          <div class="md:col-span-3  max-md:max-w-md max-md:mx-auto">
+              <div class="box rounded-xl border border-gray-300 bg-white p-6 w-full md:max-w-sm">
+                  <h6 class="font-medium text-base leading-7 text-black mb-5">{{ selectedItem }}</h6>
+                  <div class="flex items-center mb-5 gap-1">
+                      <div class="relative w-full">
+                        <h3 class="text-sm font-medium">Todos los productos</h3>
+                        <hr class="border-t border-gray-400">
+                        @if (selectedItem==='Niños') {
+                          <div class="flex flex-col space-y-1">
+                            <a href="#" class="text-sm text-gray-700 hover:underline">Ropa</a>
+                            <a href="#" class="text-sm text-gray-700 hover:underline">Calzado</a>
+                        </div>
+                        }@else{
+                          <div class="flex flex-col space-y-1">
+                            <a href="#" class="text-sm text-gray-700 hover:underline">Ropa</a>
+                            <a href="#" class="text-sm text-gray-700 hover:underline">Calzado</a>
+                            <a href="#" class="text-sm text-gray-700 hover:underline">Accesorios</a>
+                        </div>
+                        }
+                      </div>
+                  </div>
+                  <div class="space-y-2">
+                    <h3 class="text-sm font-medium">Primavera / Verano</h3>
+                    <hr class="border-t border-gray-400">
+                      <p>Ropa</p>
+                      <div class="flex flex-col space-y-1">
+                          <a href="#" class="text-sm text-gray-700 hover:underline">Ropa Casual</a>
+                          <a href="#" class="text-sm text-gray-700 hover:underline">Ropa deportiva</a>
+                          <a href="#" class="text-sm text-gray-700 hover:underline">Ropa de playa</a>
+                      </div>
+                    @if (selectedItem==='Hombres') {
+                      <hr class="border-t border-gray-400">
+                      <p>Calzado</p>
+                      <div class="flex flex-col space-y-1">
+                          <a href="#" class="text-sm text-gray-700 hover:underline">Sandalias</a>
+                          <a href="#" class="text-sm text-gray-700 hover:underline">Zapatillas deportivas ligeras</a>
+                          <a href="#" class="text-sm text-gray-700 hover:underline">Mocasines</a>
+                      </div>
+                      <hr class="border-t border-gray-400">
+                      <p>Accesorios</p>
+                      <div class="flex flex-col space-y-1">
+                          <a href="#" class="text-sm text-gray-700 hover:underline">Relojes</a>
+                      </div>
+                    }@else if (selectedItem==='Mujeres') {
+                      <hr class="border-t border-gray-400">
+                      <p>Calzado</p>
+                      <div class="flex flex-col space-y-1">
+                        <a href="#" class="text-sm text-gray-700 hover:underline">Sandalias de tacón</a>
+                          <a href="#" class="text-sm text-gray-700 hover:underline">Sandalias planas</a>
+                        <a href="#" class="text-sm text-gray-700 hover:underline">Zapatillas deportivas ligeras</a>
+                    </div>
+                      <hr class="border-t border-gray-400">
+                      <p>Accesorios</p>
+                      <div class="flex flex-col space-y-1">
+                          <a href="#" class="text-sm text-gray-700 hover:underline">Bracaletes</a>
+                          <a href="#" class="text-sm text-gray-700 hover:underline">Pulseras</a>
+                          <a href="#" class="text-sm text-gray-700 hover:underline">Anillos</a>
+                      </div>
+                    }@else if (selectedItem==='Niños') {
+                      <hr class="border-t border-gray-400">
+                      <p>Calzado</p>
+                      <div class="flex flex-col space-y-1">
+                        <a href="#" class="text-sm text-gray-700 hover:underline">Sandalias</a>
+                        <a href="#" class="text-sm text-gray-700 hover:underline">Zapatillas deportivas ligera</a>
+                        <a href="#" class="text-sm text-gray-700 hover:underline">Calzado de agua (para playa o piscina)</a>
+                      </div>
+                    }
+
+                  </div><br>
+                                <!-- Temporada Otoño / Invierno -->
+                  <div class="space-y-2">
+                    <h3 class="text-sm font-medium">Otoño / Invierno</h3>
+                    <hr class="border-t border-gray-400">
+                      <p>Ropa</p>
+                      <div class="flex flex-col space-y-1">
+                          <a href="#" class="text-sm text-gray-700 hover:underline">Abrigos y Chaquetas
+                          </a>
+                          <a href="#" class="text-sm text-gray-700 hover:underline">Ropa de Punto
+                          </a>
+                          <a href="#" class="text-sm text-gray-700 hover:underline">Ropa Formal de Invierno
+                          </a>
+                      </div>
+                    @if (selectedItem==='Hombres') {
+                      <hr class="border-t border-gray-400">
+                      <p>Calzado</p>
+                      <div class="flex flex-col space-y-1">
+                          <a href="#" class="text-sm text-gray-700 hover:underline">Botas de cuero
+                          </a>
+                          <a href="#" class="text-sm text-gray-700 hover:underline">Botines
+                          </a>
+                          <a href="#" class="text-sm text-gray-700 hover:underline">Zapatos impermeables</a>
+                      </div>
+                    }@else if (selectedItem==='Mujeres') {
+                      <hr class="border-t border-gray-400">
+                      <p>Calzado</p>
+                      <div class="flex flex-col space-y-1">
+                        <a href="#" class="text-sm text-gray-700 hover:underline">                      Botas largas
+                        </a>
+                          <a href="#" class="text-sm text-gray-700 hover:underline">Botines de tacón</a>
+                        <a href="#" class="text-sm text-gray-700 hover:underline">Botas impermeables</a>
+                    </div>
+
+                    }@else if (selectedItem==='Niños') {
+                      <hr class="border-t border-gray-400">
+                      <p>Calzado</p>
+                      <div class="flex flex-col space-y-1">
+                        <a href="#" class="text-sm text-gray-700 hover:underline">Botas de lluvia</a>
+                        <a href="#" class="text-sm text-gray-700 hover:underline">Botines</a>
+                        <a href="#" class="text-sm text-gray-700 hover:underline">Botas forradas</a>
+                      </div>
+                    }
+                </div>
+              </div>
+
+              <div class="mt-7 box rounded-xl border border-gray-300 bg-white p-6 w-full md:max-w-sm">
+
+
+
+                  <div class="w-full mb-7">
+                      <div class='accordion-group grid grid-cols-1 gap-5 sm:gap-9'
+                          data-accordion="default-accordion">
+                          <div class='accordion '
+                              id='category-heading-one'>
+                              <div class="space-y-2">
+                                <h3 class="text-sm font-medium">Niños</h3>
+                                <hr class="border-t border-gray-400">
+                                <div class="flex flex-col space-y-1">
+                                    <label class="flex items-center text-sm text-gray-700">
+                                        <input type="checkbox" class="mr-2">
+                                        Niño
+                                    </label>
+                                    <label class="flex items-center text-sm text-gray-700">
+                                        <input type="checkbox" class="mr-2">
+                                        Niña
+                                    </label>
+                                </div>
+                            </div>
+                          </div>
+                      </div>
+                  </div>
+
+
+                  <div class="box flex flex-col gap-2">
+                    <div class="space-y-2">
+                      <h3 class="text-sm font-medium">Costo</h3>
+                      <hr class="border-t border-gray-400">
+                      <div class="flex flex-col space-y-1">
+                          <label class="flex items-center text-sm text-gray-700">
+                              <input type="checkbox" class="mr-2">
+                              Por bajo de $500
+                          </label>
+                          <label class="flex items-center text-sm text-gray-700">
+                              <input type="checkbox" class="mr-2">
+                              $500 - $1500
+                          </label>
+                          <label class="flex items-center text-sm text-gray-700">
+                              <input type="checkbox" class="mr-2">
+                              Por encima de $1500
+                          </label>
+                      </div>
+                  </div>
+                  </div>
+              </div>
+          </div>
+          <div class="col-span-12 md:col-span-9"></div>
+      </div>
+
+  </div>
+</section>

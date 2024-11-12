@@ -1,0 +1,66 @@
+<!--
+  This example requires some changes to your config:
+
+  ```
+  // tailwind.config.js
+  module.exports = {
+    // ...
+    plugins: [
+      // ...
+      require('@tailwindcss/forms'),
+    ],
+  }
+  ```
+-->
+<!--
+  This example requires updating your template:
+
+  ```
+  <html class="h-full bg-white">
+  <body class="h-full">
+  ```
+-->
+<div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
+  <div class="sm:mx-auto sm:w-full sm:max-w-sm">
+    <img class="mx-auto h-10 w-auto" src="logo-click.svg" alt="Your Company">
+    <h2 class="mt-10 text-center text-2xl/9 font-bold tracking-tight text-gray-900">Click & Trend</h2>
+  </div>
+
+  <div class="sm:mx-auto sm:w-full sm:max-w-sm">
+    <form class="space-y-6 p-6 shadow-md rounded-lg border border-gray-300" action="#" method="POST">
+      <h2 class=" text-center text-2xl/9 font-bold tracking-tight text-gray-900">Login</h2>
+      <div class="mb-4">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="email">Correo</label>
+        <input [(ngModel)]="username" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500"
+          type="email" id="email" name="email" placeholder="example@gmail.com" required>
+      </div>
+      <div class="mb-4">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="password">Contraseña</label>
+        <input [(ngModel)]="password" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500"
+          type="password" id="password" name="password" placeholder="Ingresa tu contraseña" required>
+
+          <div class="text-sm py-4 px-1">
+            <a href="#" class="font-semibold text-blue-600 hover:text-blue-500">Olvidaste tu contraseña?</a>
+          </div>
+      </div>
+      <div *ngIf="errorMessage" class="text-red-700 text-center text-sm">{{ errorMessage }}</div>
+      <button (click)="login()"
+        class="w-full bg-blue-600 text-white text-sm font-bold py-2 px-4 rounded-md hover:bg-blue-500 transition duration-300"
+        type="submit">Iniciar sesión
+      </button>
+      <div class="flex justify-center items-center text-sm">
+        <hr class="w-1/3 h-2 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8">
+        <p>O continuar con</p>
+        <hr class="w-1/3 h-2 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8">
+      </div>
+      <div>
+        <a class="w-full flex justify-center items-center mb-4" mat-raised-button href=""><img src="Google.webp"  alt="Google Icon" width="40" height="40"></a>
+      </div>
+    </form>
+
+    <p class="mt-4 text-center text-sm/6 text-gray-500">
+      No tienes una cuenta?
+      <a routerLink="/register" class="font-semibold text-blue-600 hover:text-blue-500">Registrate</a>
+    </p>
+  </div>
+</div>

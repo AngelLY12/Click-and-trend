@@ -1,0 +1,17 @@
+<div>
+  <div class="text-center">
+    <p class="font-semibold text-3xl">Los mejores estilos</p>
+    <p class="font-medium text-lg">Cómpralo antes de que se acabe</p>
+  </div>
+  <div class="relative grid grid-cols-2 gap-4">
+
+    @for (item of items; track item.id) {
+      <mat-card>
+        <img [src]="item.ruta" alt="Items">
+        <button mat-flat-button class="absolute bottom-6 left-6 bg-white text-black">Comprar</button>
+      </mat-card>
+    }
+
+  </div>
+
+</div>

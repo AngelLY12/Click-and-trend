@@ -1,0 +1,14 @@
+<div class="hidden lg:flex lg:gap-x-12">
+  <a href="#" class="text-sm font-semibold leading-6 text-gray-900 hover:underline me-4 md:me-6">
+    <button mat-button>Inicio</button>
+  </a>
+  <a routerLink="/products-men" (click)="selectItem('Hombres')" class="text-sm font-semibold leading-6 text-gray-900 hover:underline me-4 md:me-6">
+    <button mat-button>Hombres</button>
+  </a>
+  <a routerLink="/products-women" (click)="selectItem('Mujeres')" class="text-sm font-semibold leading-6 text-gray-900 hover:underline me-4 md:me-6">
+    <button mat-button>Mujeres</button>
+  </a>
+  <a routerLink="/products-kids" (click)="selectItem('Niños')" class="text-sm font-semibold leading-6 text-gray-900 hover:underline me-4 md:me-6">
+    <button mat-button>Niños</button>
+  </a>
+</div>

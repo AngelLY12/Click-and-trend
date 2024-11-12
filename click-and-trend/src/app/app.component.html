@@ -1,0 +1,11 @@
+@if (isAdmin) {
+  <app-notifications></app-notifications>
+  <app-dashboard-layout></app-dashboard-layout>
+}@else if (!isAdmin) {
+  <app-header></app-header>
+  <app-notifications></app-notifications>
+  <router-outlet/>
+  <app-footer></app-footer>
+}
+
+

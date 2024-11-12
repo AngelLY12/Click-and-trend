@@ -1,0 +1,30 @@
+<div class="flex flex-col py-10">
+  <div class="flex flex-row justify-between items-center">
+    <p class="font-semibold text-xl">Nuevos productos</p>
+    <a href="" mat-button>Ver todos</a>
+  </div>
+  <div class="relative flex justify-center items-center bg-blue-300/55 gap-4 rounded-lg p-16">
+    <button mat-mini-fab class="bg-white text-black rounded-full" (click)="prev()">
+      <mat-icon>chevron_left</mat-icon>
+    </button>
+    @for (item of visibleItems; track item.id) {
+      <mat-card class="relative group w-64 h-80 overflow-hidden">
+        <!-- Imagen principal -->
+        <img mat-card-image [src]="item.ruta" alt="Image" class="w-full h-full object-cover">
+
+        <!-- Contenido que aparecerá en hover -->
+        <div class="absolute inset-0 bg-black bg-opacity-70 flex flex-col justify-center items-center text-white text-center p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          <mat-card-title class="text-lg font-bold">{{item.title}}</mat-card-title>
+          <mat-card-content class="mt-2">{{item.desc}}</mat-card-content>
+          <mat-card-footer class="mt-4 text-xl font-semibold py-2">${{item.precio}} MXN</mat-card-footer>
+          <button mat-flat-button class="bg-white text-black">Comprar</button>
+
+        </div>
+      </mat-card>
+
+    }
+    <button mat-mini-fab class="bg-white text-black rounded-full" (click)="next()">
+      <mat-icon>chevron_right</mat-icon>
+    </button>
+  </div>
+</div>

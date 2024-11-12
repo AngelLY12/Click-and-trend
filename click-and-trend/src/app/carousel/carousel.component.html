@@ -1,0 +1,25 @@
+<section class="w-full h-2/4 flex bg-black flex-col">
+  <div class="carousel-container">
+    <div class="carousel" [style.transform]="'translateX(-' + currentIndex * 100 + '%)'">
+      <div class="cards" *ngFor="let image of images">
+        <img mat-card-image [src]="image" alt="Image">
+      </div>
+    </div>
+    <button mat-mini-fab class="nav-button left" (click)="prev()">
+      <mat-icon>chevron_left</mat-icon>
+    </button>
+    <button mat-mini-fab class="nav-button right" (click)="next()">
+      <mat-icon>chevron_right</mat-icon>
+    </button>
+
+  </div>
+          <!-- Indicadores -->
+
+  <div class="flex justify-center mt-2 py-4">
+    <span *ngFor="let image of images; let i = index"
+          (click)="currentIndex = i"
+          [class.bg-blue-400]="i === currentIndex"
+          [class.bg-white]="i !== currentIndex"
+          class="w-3 h-3 rounded-full mx-1 cursor-pointer transition-colors duration-300"></span>
+  </div>
+</section>

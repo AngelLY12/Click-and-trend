@@ -1,0 +1,83 @@
+<!-- component -->
+<div class="container mx-auto py-8">
+  <div class="sm:mx-auto sm:w-full sm:max-w-sm">
+    <img class="mx-auto h-10 w-auto" src="logo-click.svg" alt="Your Company">
+    <h2 class="mt-10 text-center text-2xl font-bold tracking-tight text-gray-900">Click & Trend</h2>
+  </div>
+  <form class="w-full max-w-sm mx-auto bg-white p-8 rounded-lg border border-gray-300 shadow-md" (ngSubmit)="register()">
+    <h2 class="text-2xl font-bold mb-6 text-center">Registrate</h2>
+
+    <div *ngIf="successMessage" class="text-center text-green-600 mb-4">{{ successMessage }}</div>
+    <div *ngIf="errorMessage" class="text-center text-red-600 mb-4">{{ errorMessage }}</div>
+
+    <div class="mb-4">
+      <label class="block text-gray-700 text-sm font-bold mb-2" for="name">Nombre</label>
+      <input [(ngModel)]="firstname" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500"
+             type="text" id="name"  name="firstname" placeholder="Ingresa tu nombre"
+             [ngClass]="{'border-green-500': isValidName}"
+             (input)="nameValidation()"
+             >
+    </div>
+
+
+
+    <div class="mb-4">
+      <label class="block text-gray-700 text-sm font-bold mb-2" for="email">Correo</label>
+      <input class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500"
+             type="email" id="email" [(ngModel)]="username" name="username" placeholder="example@gmail.com"
+             [ngClass]="{'border-green-500': isValidEmail}"
+             (input)="emailValidation()"
+             >
+
+    </div>
+
+    <div class="mb-4">
+      <label class="block text-gray-700 text-sm font-bold mb-2" for="password">Contraseña</label>
+      <input class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500"
+      type="password" id="password" [(ngModel)]="password" name="password" placeholder="Ingresa tu contraseña"
+      title="La contraseña debe tener al menos 8 caracteres, una letra mayúscula, una minúscula, un número y un carácter especial."
+      (focus)="showPasswordRequirements()" (blur)="hidePasswordRequirements()" (input)="validatePassword()"
+      [ngClass]="{'border-green-500': isValidPassword}"
+      (input)="validatePassword()"
+      >
+      <div *ngIf="passwordFocused" class="mt-2 text-sm text-gray-600">
+        <ul>
+          <li [class.text-green-600]="requirements[0]" [class.text-gray-600]="requirements[0]">
+            <span [class.text-green-600]="requirements[0]" [class.text-gray-600]="!requirements[0]">✔</span>
+            Al menos 8 caracteres
+          </li>
+          <li [class.text-green-600]="requirements[1]" [class.text-gray-600]="!requirements[1]">
+            <span [class.text-green-600]="requirements[1]" [class.text-gray-600]="!requirements[1]">✔</span>
+            Una letra mayúscula
+          </li>
+          <li [class.text-green-600]="requirements[2]" [class.text-gray-600]="!requirements[2]">
+            <span [class.text-green-600]="requirements[2]" [class.text-gray-600]="!requirements[2]">✔</span>
+            Una letra minúscula
+          </li>
+          <li [class.text-green-600]="requirements[3]" [class.text-gray-600]="!requirements[3]">
+            <span [class.text-green-600]="requirements[3]" [class.text-gray-600]="!requirements[3]">✔</span> Al menos un número y un carácter especial
+          </li>
+
+        </ul>
+      </div>
+    </div>
+
+    <div class="mb-4">
+      <label class="block text-gray-700 text-sm font-bold mb-2" for="confirm-password">Confirma tu contraseña</label>
+      <input class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500"
+             type="password" id="confirm-password" [(ngModel)]="confirmPassword" name="confirmPassword" placeholder="Confirma tu contraseña"
+             [ngClass]="{'border-green-500': isValidConfirmPassword}"
+
+             >
+    </div>
+    <div *ngIf="!passwordMismatch" class="text-red-600 mb-4 text-center">Las contraseñas no coinciden</div>
+
+    <button class="w-full bg-blue-600 text-white text-sm font-bold py-2 px-4 rounded-md hover:bg-blue-500 transition duration-300"
+            type="submit">Crear cuenta</button>
+  </form>
+
+  <p class="mt-4 text-center text-sm text-gray-500">
+    Ya tienes una cuenta?
+    <a routerLink="/login" class="font-semibold text-blue-600 hover:text-blue-500">Inicia sesión</a>
+  </p>
+</div>

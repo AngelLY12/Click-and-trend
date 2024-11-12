@@ -1,0 +1,127 @@
+
+<div class="mx-4 min-h-screen max-w-screen-xl sm:mx-8 xl:mx-auto">
+  <div class="grid grid-cols-8 pt-3 sm:grid-cols-10">
+    <div class="col-span-8 overflow-hidden rounded-xl sm:bg-gray-50 sm:px-8 sm:shadow">
+      <div class="pt-4">
+        <h1 class="py-2 text-2xl font-semibold">Configuración de la cuenta</h1>
+        <!-- <p class="font- text-slate-600">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p> -->
+      </div>
+      <hr class="mt-4 mb-8" />
+      <p class="py-2 text-xl font-semibold">Dirección de correo</p>
+      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+        <p class="text-gray-600" aria-disabled="true"><strong>{{usuario.username}}</strong></p>
+      </div>
+      <hr class="mt-4 mb-8" />
+      <form (ngSubmit)="updateUser()">
+        <!-- First Name -->
+        <p class="py-2 text-xl font-semibold">Nombre(s)</p>
+        <div *ngIf="!isEditingFirstname" class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+            <p class="text-gray-600"><strong>{{usuario.firstname}}</strong></p>
+            <p class="inline-flex text-sm font-semibold text-blue-600 underline decoration-2 cursor-pointer" (click)="toggleEdit('firstname')">Cambiar</p>
+        </div>
+        <div *ngIf="isEditingFirstname" class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+            <input name="firstname" type="text" [(ngModel)]="usuario.firstname" placeholder="Nuevo nombre" class="w-2/4 bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow">
+            <div class="flex justify-center gap-4">
+              <button mat-flat-button type="submit">Guardar</button>
+              <p (click)="toggleEdit('firstname')" class="bg-red-600 rounded-full text-center text-white px-4 py-2 cursor-pointer">Cancelar</p>
+            </div>
+        </div>
+        <hr class="mt-4 mb-8" />
+
+        <!-- Last Name -->
+        <p class="py-2 text-xl font-semibold">Apellido(s)</p>
+        <div *ngIf="!isEditingLastname" class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+            <p class="text-gray-600"><strong>{{usuario.lastname}}</strong></p>
+            <p class="inline-flex text-sm font-semibold text-blue-600 underline decoration-2 cursor-pointer" (click)="toggleEdit('lastname')">Cambiar</p>
+        </div>
+        <div *ngIf="isEditingLastname" class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+            <input name="lastname" type="text" [(ngModel)]="usuario.lastname" placeholder="Nuevo apellido" class="w-2/4 bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow">
+            <div class="flex justify-center gap-4">
+              <button mat-flat-button type="submit" class="btn-save">Guardar</button>
+              <p (click)="toggleEdit('lastname')" class="bg-red-600 rounded-full text-center text-white px-4 py-2 cursor-pointer">Cancelar</p>
+            </div>
+
+        </div>
+        <hr class="mt-4 mb-8" />
+
+        <!-- Age -->
+        <p class="py-2 text-xl font-semibold">Edad</p>
+        <div *ngIf="!isEditingAge" class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+            <p class="text-gray-600"><strong>{{usuario.age}}</strong></p>
+            <p class="inline-flex text-sm font-semibold text-blue-600 underline decoration-2 cursor-pointer" (click)="toggleEdit('age')">Cambiar</p>
+        </div>
+        <div *ngIf="isEditingAge" class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+            <input name="age" type="number" [(ngModel)]="usuario.age" placeholder="Nueva edad" class="w-2/4 bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow">
+            <div class="flex justify-center gap-4">
+              <button mat-flat-button type="submit" class="btn-save">Guardar</button>
+              <p (click)="toggleEdit('age')" class="bg-red-600 rounded-full text-center text-white px-4 py-2 cursor-pointer">Cancelar</p>
+            </div>
+        </div>
+      <hr class="mt-4 mb-8" />
+      <p class="py-2 text-xl font-semibold">Cambiar contraseña</p>
+      <div *ngIf="!isEditingPassword" class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+        <p class="inline-flex text-sm font-semibold text-blue-600 underline decoration-2 cursor-pointer" (click)="toggleEdit('password')">Cambiar</p>
+    </div>
+      <div *ngIf="isEditingPassword" class="flex items-center gap-4">
+        <div class="flex flex-col space-y-2 sm:flex-row sm:space-y-0 sm:space-x-3">
+          <label for="login-password">
+            <span class="text-sm text-gray-500">Nueva contraseña</span>
+            <div class="relative flex overflow-hidden rounded-md border-2 transition focus-within:border-blue-600">
+              <input type="password" id="password" class="w-full flex-shrink appearance-none border-gray-300 bg-white py-2 px-4 text-base text-gray-700 placeholder-gray-400 focus:outline-none" placeholder="***********" />
+            </div>
+          </label>
+        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" class="mt-5 ml-2 h-6 w-6 cursor-pointer text-sm font-semibold text-gray-600 underline decoration-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21" />
+        </svg>
+        <div class="flex justify-center items-center gap-4">
+          <button type="submit" class="rounded-lg bg-blue-600 px-4 py-2 text-white">Guardar</button>
+          <p (click)="toggleEdit('password')" class="bg-red-600 rounded-lg text-center text-white px-4 py-2 cursor-pointer">Cancelar</p>
+        </div>
+      </div>
+
+
+
+    </form>
+
+
+      <hr class="mt-4 mb-8" />
+
+      <div class="mb-10">
+        <p class="py-2 text-xl font-semibold">Eliminar cuenta</p>
+        <p class="inline-flex items-center rounded-full bg-rose-100 px-4 py-1 text-rose-600">
+          <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
+          </svg>
+          Procede con precaución
+        </p>
+        <p class="mt-2">Aegurate de querer eliminar la cuenta, se eliminarán todos los datos y no habrá forma de recuperalos.</p>
+        <button type="button" (click)="openModal()" class="ml-auto text-sm font-semibold text-rose-600 underline decoration-2">Continuar con la eliminación</button>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="isModalOpen" id="popup-modal" tabindex="-1" class="fixed inset-0 flex justify-center items-center z-50 bg-black bg-opacity-50">
+  <div class="relative p-4 w-full max-w-md bg-white rounded-lg shadow-lg dark:bg-gray-700">
+    <button type="button" class="absolute top-3 end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" (click)="closeModal()">
+      <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+      </svg>
+      <span class="sr-only">Close modal</span>
+    </button>
+    <div class="p-4 md:p-5 text-center">
+      <svg class="mx-auto mb-4 text-gray-400 w-12 h-12 dark:text-gray-200" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 11V6m0 8h.01M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
+      </svg>
+      <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">¿Estás seguro de que quieres eliminar tu cuenta?</h3>
+      <button (click)="deleteUser()" type="button" class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center">
+        Sí, estoy seguro
+      </button>
+      <button (click)="closeModal()" type="button" class="py-2.5 px-5 ms-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
+        No, cancelar
+      </button>
+    </div>
+  </div>
+</div>
