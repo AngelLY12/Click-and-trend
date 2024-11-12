@@ -1,0 +1,33 @@
+package com.click.trend.C.T.Products;
+
+public enum ProductsSubCategory {
+    // Ropa
+    ROPA_CASUAL,
+    ROPA_DEPORTIVA,
+    ROPA_DE_PLAYA,
+    ABRIGOS_Y_CHAQUETAS,
+    ROPA_DE_PUNTO,
+    ROPA_FORMAL_DE_INVIERNO,
+
+    // Calzado
+    SANDALIAS,
+    ZAPATILLAS_DEPORTIVAS_LIGERAS,
+    MOCASINES,
+    BOTAS_DE_CUERO,
+    BOTINES,
+    ZAPATOS_IMPERMEABLES,
+    BOTAS_LARGAS,
+    BOTINES_DE_TACON,
+    BOTAS_IMPERMEABLES,
+    SANDALIAS_DE_TACON,
+    SANDALIAS_PLANAS,
+    CALZADO_DE_AGUA,
+    BOTAS_DE_LLUVIA,
+    BOTINES_FORRADOS,
+
+    // Accesorios
+    RELOJES,
+    BRACALETES,
+    PULSERAS,
+    ANILLOS
+}
